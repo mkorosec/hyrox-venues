@@ -1,0 +1,186 @@
+{
+  "id": "budapest-2026",
+  "event": {
+    "name": "HYROX Budapest",
+    "date": "2026-10-17",
+    "schedule": [
+      ["Men", "08:00–09:50"], ["Doubles Men", "10:20–11:20"], ["Pro Doubles Women", "11:50"],
+      ["Pro Women", "12:10"], ["Doubles Women", "12:50–14:10"], ["Women", "14:20–15:30"],
+      ["Doubles Mixed", "16:00–17:30"], ["Pro Doubles Men", "18:00"], ["Pro Men", "18:20–19:00"],
+      ["Relays", "19:30–20:00"]
+    ],
+    "scheduleNote": "Provisional, from hyrox.com. Individual start times are published ~3 days before. Start-time changes are not allowed.",
+    "checkIn": "Opens 90 minutes before your division's first wave. Bring photo ID; check in only on your race day and only for yourself."
+  },
+  "venue": {
+    "name": "HUNGEXPO Budapest",
+    "hall": "Hall A",
+    "entrance": "Gate 3",
+    "address": "Albertirsai út 10, 1101 Budapest"
+  },
+  "sources": [
+    { "kind": "organizer-map", "ref": "source-data/2026-10-17-budapest/HYROX_Budapest_VenueMap_PRINT_2215x1864mm-1-1.pdf" },
+    { "kind": "web", "ref": "https://hyrox.com/event/hyrox-budapest/", "used_for": "schedule, check-in, IN-arch rule" },
+    { "kind": "web", "ref": "https://hungexpo.hu/en/events/automotive/for-visitors/general-information/", "used_for": "address, parking, transport" },
+    { "kind": "osm", "ref": "https://www.openstreetmap.org/way/192361425", "used_for": "Hall A outline and orientation" },
+    { "kind": "osm", "ref": "https://www.openstreetmap.org/node/2029195846", "used_for": "Gate 3 position" }
+  ],
+
+  "frame": {
+    "units": "organizer-map px (page rendered 1198 px wide, y down)",
+    "origin": [50, 622],
+    "metersPerUnit": 0.2167,
+    "calibration": "No scale bar on the map. Chosen so a run (2 full laps + OUT→IN, per the 'enter on 3rd IN sighting' rule) measures ~1000 m. Cross-check: hall depth becomes 109 m vs 107 m N-S for Hall A in OSM."
+  },
+  "overlay": { "image": "map.png", "extent": [0, 0, 1198, 1008.5] },
+  "geo": {
+    "anchor": { "frame": [902, 622], "lat": 47.4931647, "lng": 19.1283427, "what": "SE corner of Hall A (OSM way 192361425)" },
+    "bearingDeg": 0,
+    "note": "Map top is north: Hall A's long axis runs E-W in OSM and Gate 3 lies south of the hall."
+  },
+
+  "hall": {
+    "outline": [[50, 118], [902, 118], [902, 622], [50, 622]],
+    "wallHeight": 14,
+    "door": { "name": "Hall entrance", "at": [770, 622] }
+  },
+
+  "runCourse": {
+    "centerline": [[769, 142, 28], [85, 142, 45], [85, 595, 45], [688, 595, 14], [769, 512, 14]],
+    "width": 33,
+    "enterOnInSighting": 3,
+    "note": "Counter-clockwise on the map: west along the north side, south, east along the south side, north up the east side."
+  },
+
+  "roxzone": {
+    "in": [233, 158],
+    "out": [496, 158],
+    "corridor": [[108, 172], [748, 172]],
+    "corridorWidth": 27,
+    "note": "The Roxzone corridor runs along the north side between the course and the stations. Every station has a one-way ↓ entry and ↑ exit."
+  },
+
+  "start": {
+    "path": [[866, 136], [812, 136], [775, 141]],
+    "note": "Line up in the warm-up area, go through the Red Bull Start Tunnel and join the course at the north-east corner, running west."
+  },
+
+  "stations": [
+    { "n": 1, "type": "skierg", "area": [691, 185, 739, 412], "entry": [730, 185], "exit": [700, 185], "work": [[715, 300]] },
+    { "n": 2, "type": "sledpush", "area": [587, 185, 675, 532], "entry": [596, 185],
+      "work": [[596, 352], [601, 360], [660, 360], [601, 360], [660, 360], [601, 360], [577, 365]], "exit": [577, 185],
+      "note": "Lanes run across the station. When done, walk back up the narrow return strip on the west side (↑ arrow)." },
+    { "n": 3, "type": "sledpull", "area": [480, 185, 568, 532], "entry": [488, 185],
+      "work": [[488, 352], [496, 360], [555, 360], [496, 360], [555, 360], [496, 360], [577, 368]], "exit": [577, 185],
+      "note": "Shares the return strip with Sled Push: exit up the ↑ strip between the two stations." },
+    { "n": 4, "type": "burpees", "area": [255, 185, 318, 384], "entry": [263, 185],
+      "work": [[263, 192], [263, 376], [310, 376], [310, 192]], "exit": [314, 185],
+      "note": "Down the west half of the lane, back up the east half." },
+    { "n": 5, "type": "row", "area": [209, 185, 255, 532], "entry": [216, 185], "exit": [252, 185], "work": [[232, 340]] },
+    { "n": 6, "type": "farmers", "area": [118, 185, 149.5, 436], "entry": [124, 185],
+      "work": [[124, 192], [124, 420], [138, 420], [138, 196], [124, 196], [124, 420], [138, 420], [138, 192]], "exit": [145, 185],
+      "note": "2 laps of the lane: down, round the turn marker (↻) and back up — twice." },
+    { "n": 7, "type": "lunges", "area": [149.5, 185, 196.4, 436], "entry": [157, 185],
+      "work": [[157, 192], [157, 420], [190, 420], [190, 192]], "exit": [191, 185],
+      "note": "Lunge down the lane, turn, lunge back up." },
+    { "n": 8, "type": "wallballs", "area": [362, 185, 425.6, 412.8], "entry": [394, 185], "exit": [394, 412], "work": [[394, 300]],
+      "note": "No Roxzone exit after Wall Balls: leave through the south end straight into the Finish Zone." }
+  ],
+
+  "finish": {
+    "path": [[394, 420], [386, 446], [392, 492]],
+    "line": { "center": [371, 441], "length": 69, "width": 29, "angleDeg": 45 },
+    "note": "Out of the south end of Wall Balls and across the yellow finish line. Medics are in the Finish Zone."
+  },
+
+  "arrival": [
+    { "name": "Main entrance – Gate 3", "at": [1004, 795], "note": "Albertirsai út side. In reality Gate 3 is ~160 m south of Hall A; the organizer map draws it closer." },
+    { "name": "Athlete registration", "at": [924, 722], "note": "Inside the Gate 3 building. Photo ID." },
+    { "name": "Walkway to hall", "at": [915, 641] },
+    { "at": [780, 641] },
+    { "name": "Hall A entrance", "at": [770, 615] },
+    { "at": [805, 555] },
+    { "name": "Changing rooms", "at": [842, 405] },
+    { "name": "Bag drop", "at": [872, 350] },
+    { "name": "Warm-up area (athletes only)", "at": [848, 235] },
+    { "name": "Red Bull Start Tunnel", "at": [866, 140] }
+  ],
+
+  "zones": [
+    { "kind": "warmup", "name": "Warm-up area", "rect": [811, 147, 902, 304] },
+    { "kind": "relay", "name": "Relay zone", "rect": [786, 147, 811, 304] },
+    { "kind": "bagdrop", "name": "Bag drop", "rect": [877, 317, 902, 381] },
+    { "kind": "lane", "name": "Sled return strip", "rect": [568, 185, 587, 532] },
+    { "kind": "tunnel", "name": "Start tunnel", "rect": [812, 126, 868, 146] },
+    { "kind": "finish", "name": "Finish zone", "poly": [[362, 413], [454, 413], [454, 533], [318, 533], [318, 460]] },
+    { "kind": "grandstand", "name": "Grandstand", "rect": [334, 216, 362, 357], "facing": "east" },
+    { "kind": "grandstand", "name": "Grandstand", "rect": [425, 216, 453, 357], "facing": "west" },
+    { "kind": "recovery", "name": "Recovery area", "rect": [104, 467, 120, 532] },
+    { "kind": "stage", "name": "Ceremony stage", "rect": [138, 558, 182, 578] },
+    { "kind": "sponsor", "name": "Red Bull", "rect": [357, 558, 396, 578] },
+    { "kind": "sponsor", "name": "CENTR", "rect": [477, 558, 504, 578] },
+    { "kind": "sponsor", "name": "Concept2", "rect": [506, 558, 547, 578] },
+    { "kind": "sponsor", "name": "PUMA", "rect": [548, 558, 645, 578] },
+    { "kind": "store", "name": "HYROX World Store", "rect": [712, 549, 902, 622] },
+    { "kind": "crossing", "name": "Spectator crossing", "rect": [66, 202, 104, 228] },
+    { "kind": "crossing", "name": "Spectator crossing", "rect": [752, 456, 786, 473] },
+    { "kind": "crossing", "name": "Spectator crossing", "rect": [724, 535, 756, 562] },
+    { "kind": "building", "name": "Gate 3", "rect": [915, 627, 1035, 756] },
+    { "kind": "registration", "name": "Athlete registration", "rect": [915, 690, 932, 756] },
+    { "kind": "checkin", "name": "Spectator check-in", "rect": [991, 627, 1035, 650] }
+  ],
+
+  "pois": [
+    { "kind": "water", "at": [287, 166] }, { "kind": "water", "at": [559, 166] },
+    { "kind": "energy", "at": [369, 166] },
+    { "kind": "medic", "at": [340, 193] }, { "kind": "medic", "at": [398, 462] },
+    { "kind": "wc", "at": [57, 212] }, { "kind": "wc", "at": [892, 517] },
+    { "kind": "food", "at": [278, 421] }, { "kind": "food", "at": [842, 465] },
+    { "kind": "changing", "at": [842, 393] },
+    { "kind": "help", "at": [978, 634] }
+  ],
+
+  "photoSpotsNote": "Suggested by the planner, not designated by the organizer. All spots are inside the spectator zone (black on the organizer map) or on a grandstand. Never stand in a hatched crossing point.",
+  "photoSpots": [
+    { "name": "Finish line, side-on", "at": [334, 425], "look": [380, 438], "bestFor": "the finish",
+      "tip": "Spectator corner right beside the yellow finish line; athletes cross it a few metres in front of you. The busiest spot in the hall, so arrive before your athlete's last run." },
+    { "name": "West grandstand – Wall Balls", "at": [345, 300], "look": [394, 300], "height": 4.8, "bestFor": "the last station",
+      "tip": "Seated and slightly raised, looking across the whole Wall Balls station. Good for the final 100 reps; take a top row for a clear line over heads." },
+    { "name": "East grandstand – Wall Balls & finish approach", "at": [440, 345], "look": [394, 405], "height": 4.8, "bestFor": "the last station + finish",
+      "tip": "Southern end of the east grandstand, looking down the station towards its exit into the Finish Zone. Lets you shoot the last reps and then turn for the finish." },
+    { "name": "Sled Push, head-on", "at": [683, 350], "look": [620, 360], "bestFor": "Sled Push",
+      "tip": "Narrow spectator strip between Sled Push and the SkiErg. Lanes run across the station, so every second length comes straight at you – strained faces guaranteed." },
+    { "name": "Sled Pull, side view", "at": [467, 440], "look": [520, 440], "bestFor": "Sled Pull",
+      "tip": "Strip between the Finish Zone and Sled Pull, low and close to the lanes: hand-over-hand rope pulls and the walks back." },
+    { "name": "Farmers Carry turnaround", "at": [134, 452], "look": [134, 405], "bestFor": "Farmers Carry, Lunges",
+      "tip": "Below the end of the Farmers Carry and Sandbag Lunges lanes. Athletes come straight towards you and turn at the ↻ marker." },
+    { "name": "Run course – east straight", "at": [815, 440], "look": [769, 400], "bestFor": "runs, tracking one athlete",
+      "tip": "Open spectator area beside the course, heading north. Every athlete passes here twice per run (16 times per race). The easiest place to wait for one person; food and drinks behind you." },
+    { "name": "Run course – south straight", "at": [300, 545], "look": [330, 595], "bestFor": "runs, panning shots",
+      "tip": "The longest straight. Athletes run left to right (east) past you – good for panning shots, with the ceremony stage at the west end." }
+  ],
+
+  "city": {
+    "hallOutline": [
+      [47.4931647, 19.1283427], [47.4938092, 19.1283460], [47.4938097, 19.1281409], [47.4941215, 19.1281425],
+      [47.4941276, 19.1255041], [47.4934770, 19.1255009], [47.4934765, 19.1257254], [47.4931708, 19.1257238],
+      [47.4931699, 19.1260888], [47.4931677, 19.1270506], [47.4931660, 19.1277651]
+    ],
+    "places": [
+      { "kind": "gate", "name": "Gate 3 (3. kapu) – athlete & spectator entrance", "lat": 47.4917021, "lng": 19.1283954 },
+      { "kind": "bus", "name": "Bus stop “III. kapu”", "lat": 47.491463, "lng": 19.1280438, "note": "Right at Gate 3. Lines not verified." },
+      { "kind": "bus", "name": "Bus stop “Halom utca”", "lat": 47.4901019, "lng": 19.1283754, "note": "~170 m south of Gate 3." },
+      { "kind": "tram", "name": "Kőbánya felső vasútállomás (tram 37, rail)", "lat": 47.490896, "lng": 19.1329772, "note": "Tram 37 from Blaha Lujza tér (per Hungexpo). ~450 m to Gate 3." },
+      { "kind": "parking", "name": "P4 visitor car park (P4 látogatói parkoló)", "lat": 47.4931158, "lng": 19.1306054, "note": "OSM way 207508333. ~230 m from Gate 3 as the crow flies. Not confirmed as HYROX parking." }
+    ],
+    "transport": [
+      "Metro M2 to Örs vezér tere, then bus 10 (route given by Hungexpo).",
+      "Tram 37 from Blaha Lujza tér to Kőbánya felső vasútállomás, then walk ~450 m west to Gate 3."
+    ],
+    "parking": [
+      "P4 visitor car park, east of Hall A off Albertirsai út (marked P on the map) – free for visitors at Hungexpo's own exhibitions; NOT confirmed for HYROX.",
+      "Street parking on Albertirsai út is paid (run by Kőbányai Vagyonkezelő)."
+    ],
+    "unknowns": "No HYROX athlete guide for Budapest was published at the time of building; parking for this event is unconfirmed."
+  }
+}

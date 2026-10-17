@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>HYROX race planner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- Header + side panel. On desktop this wrapper has no box of its own; on phones it is the ☰ menu overlay. -->
+  <div id="menu">
+    <header>
+      <div class="brand">
+        <h1 id="title">HYROX</h1>
+        <p id="subtitle"></p>
+      </div>
+      <nav id="modes" aria-label="Camera">
+        <button data-mode="overview" class="on">Bird's eye</button>
+        <button data-mode="follow">Follow</button>
+        <button data-mode="pov">POV</button>
+      </nav>
+      <button id="open-city" class="ghost">🗺 City map &amp; parking</button>
+      <button id="menu-close" class="ghost mobile-only" aria-label="Close menu">✕</button>
+    </header>
+
+    <aside id="panel">
+      <section>
+        <h3>Ask</h3>
+        <div id="questions">
+          <button data-q="enter">Where do I come in?</button>
+          <button data-q="park">Where do I park / how do I get there?</button>
+          <button data-q="first">Where is the first station?</button>
+          <button data-q="walk">Walk me through the race</button>
+          <button data-q="finish">Where is the finish?</button>
+          <button data-q="facilities">Water, toilets &amp; medics</button>
+          <button data-q="photos">Best photo spots</button>
+        </div>
+      </section>
+      <section id="detail" aria-live="polite"></section>
+      <section>
+        <h3>Show on map</h3>
+        <div id="look" class="seg-control" role="radiogroup" aria-label="Look">
+          <label><input type="radio" name="look" value="model" checked> 3D model</label>
+          <label><input type="radio" name="look" value="map"> Organizer map</label>
+          <label><input type="radio" name="look" value="real"> Realistic</label>
+        </div>
+        <div id="toggles">
+          <label><input type="checkbox" data-layer="labels" checked> Labels</label>
+          <label><input type="checkbox" data-layer="spots" checked> Photo spots</label>
+          <label><input type="checkbox" data-layer="pois" checked> Water, WC, medics</label>
+          <label><input type="checkbox" data-layer="route" checked> Athlete route</label>
+          <label><input type="checkbox" data-layer="walls" checked> Hall walls</label>
+        </div>
+      </section>
+      <section>
+        <h3>Race, leg by leg</h3>
+        <ol id="segments"></ol>
+      </section>
+      <section>
+        <h3>Photo spots for spectators</h3>
+        <ol id="spots"></ol>
+      </section>
+      <details>
+        <summary>Schedule &amp; check-in</summary>
+        <div id="schedule"></div>
+      </details>
+    </aside>
+  </div>
+
+  <section id="stage" data-mode="overview">
+    <div id="stage-3d"></div>
+    <div id="hud"><strong id="hud-title"></strong><span id="hud-sub"></span></div>
+    <button id="menu-open" class="mobile-only" aria-label="Open menu">☰</button>
+    <p id="hint">Drag to look around · Space play/pause · ←/→ legs</p>
+    <div id="playbar">
+      <button id="prev" title="Previous leg">⏮</button>
+      <button id="play">▶ Play</button>
+      <button id="next" title="Next leg">⏭</button>
+      <select id="speed" aria-label="Speed">
+        <option value="1">1×</option><option value="2" selected>2×</option>
+        <option value="4">4×</option><option value="10">10×</option>
+      </select>
+      <div id="strip"></div>
+    </div>
+
+    <div id="city" hidden>
+      <div id="citymap"></div>
+      <div id="city-side">
+        <button id="close-city" class="ghost">✕ Back to the hall</button>
+        <div id="city-info"></div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
